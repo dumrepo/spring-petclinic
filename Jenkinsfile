@@ -1,6 +1,6 @@
 pipeline{
-    agent {label : 'MASTER'}
-     triggers:{pollSCM('* * * * *')}
+    agent {label 'MASTER'}
+     triggers {pollSCM('* * * * *')}
      stages{
          stage('clone'){
              steps{
@@ -14,3 +14,4 @@ pipeline{
          }
      }
 }
+
