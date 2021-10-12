@@ -2,16 +2,15 @@ pipeline{
     agent {label 'MASTER'}
      triggers {pollSCM('* * * * *')}
      stages{
-         stage('clone'){
-             steps{
+         stage ('clone'){
+             steps {
                  git branch:'declartivepipeline',url:'https://github.com/dumrepo/spring-petclinic.git'
              }
-        stage('compile'){
-            steps{
+        stage ('compile'){
+            steps {
                sh 'mvn package'
             }
           }
          }
      }
 }
-
