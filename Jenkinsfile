@@ -3,11 +3,11 @@ pipeline{
      triggers {pollSCM('* * * * *')}
      stages{
          stage ('clone'){
-             steps {
+             steps{
                  git branch:'declartivepipeline',url:'https://github.com/dumrepo/spring-petclinic.git'
              }
         stage ('compile'){
-            steps {
+            steps{
                sh 'mvn package'
             }
           }
